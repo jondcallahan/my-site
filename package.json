@@ -1,0 +1,22 @@
+{
+  "name": "minimalist-site-vite",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "concurrently vite npm:dev:css",
+    "dev:css": "postcss -o bundled.css style.css -w",
+    "build:css": "postcss -o bundled.css style.css",
+    "build": "npm run build:css && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "concurrently": "^6.5.1",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
+    "vite": "^2.7.2"
+  },
+  "dependencies": {
+    "open-props": "^1.0.13",
+    "postcss-import": "^14.0.2",
+    "postcss-jit-props": "^1.0.4"
+  }
+}

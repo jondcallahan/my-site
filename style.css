@@ -1,0 +1,87 @@
+/*
+ open-props normalize isn't required, but makes for a nice base.
+ add this to see default styles for <details> and other HTM5 elements
+ Bonus: normalize includes light and dark vars for adaptive theming */
+@import "open-props/src/extra/normalize.css";
+
+:root {
+  --body-text-color: var(--gray-8);
+  --body-background-color: var(--gray-2);
+  --body-border-color: white;
+  --brand: var(--indigo-5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --body-text-color: var(--gray-3);
+    --body-background-color: var(--gray-8);
+    --body-border-color: var(--gray-9);
+  }
+}
+
+body {
+  display: grid;
+  place-content: center;
+  background-color: var(--body-background-color);
+  font-family: Georgia, var(--font-serif);
+}
+
+@media screen and (min-width: 900px) and (min-height: 900px) {
+  body {
+    box-shadow: inset 0 0 0 40px var(--body-border-color);
+  }
+}
+
+article {
+  display: grid;
+  gap: var(--size-4);
+  justify-items: center;
+  text-align: center;
+  max-width: var(--size-content-3);
+  padding: var(--size-5) var(--size-3);
+}
+
+a {
+  text-decoration: underline;
+}
+
+h1 {
+  line-height: var(--font-lineheight-1);
+  font-size: var(--font-size-fluid-2);
+}
+
+p {
+  font-size: var(--font-size-2);
+  line-height: var(--font-lineheight-4);
+}
+
+h1,
+p,
+a,
+a:visited,
+a:hover {
+  color: var(--body-text-color);
+}
+
+img {
+  background-size: cover;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIj48ZmlsdGVyIGlkPSJiIj48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSIxMiIgLz48L2ZpbHRlcj48cGF0aCBmaWxsPSIjYWNhY2FjIiBkPSJNMCAwaDQwMHY0MDBIMHoiLz48ZyBmaWx0ZXI9InVybCgjYikiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC44IC44KSBzY2FsZSgxLjU2MjUpIiBmaWxsLW9wYWNpdHk9Ii41Ij48ZWxsaXBzZSBjeD0iNjIiIGN5PSIyNTAiIHJ4PSI2OCIgcnk9IjY4Ii8+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI3MSAyMzdMMjUxLTE2IDEyNCAxMjV6Ii8+PGVsbGlwc2Ugcng9IjEiIHJ5PSIxIiB0cmFuc2Zvcm09InJvdGF0ZSgtMTYwLjUgNTYuMyAyMC43KSBzY2FsZSgyNy40NzI1MyA1Mi4zOTMwNSkiLz48ZWxsaXBzZSBmaWxsPSIjMjgyODI4IiBjeD0iMTg5IiBjeT0iMjMyIiByeD0iNDYiIHJ5PSI0NiIvPjxlbGxpcHNlIHJ4PSIxIiByeT0iMSIgdHJhbnNmb3JtPSJtYXRyaXgoLTEyLjQwMTggLTEwLjg1MzcyIDM2Ljg5MDg4IC00Mi4xNTI2OCA5NS40IDE2NCkiLz48ZWxsaXBzZSBmaWxsPSIjZmZmIiByeD0iMSIgcnk9IjEiIHRyYW5zZm9ybT0ibWF0cml4KC01My44MDYwNiAtMjIyLjQwNzYyIDQwLjAzODQ5IC05LjY4NjMzIDIwNS4zIDE1LjQpIi8+PGVsbGlwc2UgZmlsbD0iI2ZjZmNmYyIgY3g9IjIwIiBjeT0iMTMxIiByeD0iNjEiIHJ5PSI2MSIvPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMDkuNiA1My43bDQ5LjgtNC4zIDMgMzQuOS00OS44IDQuM3oiLz48L2c+PC9zdmc+);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-2);
+  aspect-ratio: var(--ratio-box);
+  width: var(--size-fluid-8);
+}
+
+.links {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-evenly;
+}
+
+.icon {
+  width: var(--font-size-1);
+  stroke-width: 0;
+  stroke: var(--body-text-color);
+  fill: var(--body-text-color);
+}
