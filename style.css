@@ -48,6 +48,7 @@ a {
 h1 {
   line-height: var(--font-lineheight-1);
   font-size: var(--font-size-fluid-2);
+  font-family: "Courier New", Courier, monospace;
 }
 
 p {
