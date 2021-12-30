@@ -1,0 +1,6 @@
+{
+  "cssvar.files": ["./node_modules/open-props/open-props.min.css"],
+  "cssvar.disableSort": true,
+  // Add support for autocomplete in other file types
+  "cssvar.extensions": ["css", "html"]
+}

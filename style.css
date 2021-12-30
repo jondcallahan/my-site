@@ -19,6 +19,10 @@
   }
 }
 
+html {
+  background-color: var(--body-border-color);
+}
+
 body {
   display: grid;
   place-content: center;
