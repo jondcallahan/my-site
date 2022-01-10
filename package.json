@@ -2,7 +2,8 @@
   "name": "minimalist-site-vite",
   "version": "0.0.0",
   "scripts": {
-    "dev": "concurrently vite npm:dev:css",
+    "dev": "concurrently npm:dev:vite npm:dev:css",
+    "dev:vite": "vite --host",
     "dev:css": "postcss -o bundled.css style.css -w",
     "build:css": "postcss -o bundled.css style.css",
     "build": "npm run build:css && vite build",
