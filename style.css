@@ -41,7 +41,7 @@ article {
   display: grid;
   gap: var(--size-4);
   max-width: var(--size-content-3);
-  padding: var(--size-8) var(--size-3);
+  padding: var(--size-8) var(--size-4);
 }
 
 a {
