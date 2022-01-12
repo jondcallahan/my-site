@@ -4,12 +4,27 @@
  Bonus: normalize includes light and dark vars for adaptive theming */
 @import "open-props/src/extra/normalize.css";
 
+/* jetbrains-mono-latin-600-normal*/
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff2")
+      format("woff2"),
+    url("@fontsource/jetbrains-mono/files/jetbrains-mono-all-600-normal.woff")
+      format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
 :root {
   --body-text-color: var(--gray-8);
   --body-background-color: var(--gray-2);
   --body-border-color: white;
   --brand: var(--indigo-5);
-  --font-mono: "Courier New", Courier, monospace;
+  --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,13 +59,17 @@ article {
   padding: var(--size-8) var(--size-4);
 }
 
-a {
-  text-decoration: underline;
-}
-
 h1 {
   line-height: var(--font-lineheight-1);
   font-size: var(--font-size-fluid-2);
+  font-family: var(--font-mono);
+}
+
+h2 {
+  line-height: var(--font-lineheight-1);
+  font-size: var(--font-size-2);
+  /* Overwrite the normalize/reset rule of max width 25ch for h2's */
+  max-inline-size: 60ch;
   font-family: var(--font-mono);
 }
 
@@ -67,6 +86,7 @@ p {
 }
 
 h1,
+h2,
 p,
 a,
 a:visited,
