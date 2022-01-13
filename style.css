@@ -22,7 +22,7 @@
 :root {
   --body-text-color: var(--gray-8);
   --body-background-color: var(--gray-2);
-  --body-border-color: white;
+  --body-border-color: var(--gray-1);
   --brand: var(--indigo-5);
   --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
 }
