@@ -1,8 +1,5 @@
-/*
- open-props normalize isn't required, but makes for a nice base.
- add this to see default styles for <details> and other HTM5 elements
- Bonus: normalize includes light and dark vars for adaptive theming */
-@import "open-props/src/extra/normalize.css";
+/* Import the minified normalize because this doesn't get compiled by postcss */
+@import "open-props/normalize.min.css";
 
 /* jetbrains-mono-latin-600-normal*/
 @font-face {
@@ -81,6 +78,7 @@ hr {
   margin-bottom: 0;
   width: 25%;
   min-width: 120px;
+  background-color: var(--body-text-color);
 }
 
 p {
@@ -95,6 +93,12 @@ a,
 a:visited,
 a:hover {
   color: var(--body-text-color);
+}
+
+/* Open props normalize gets rid of the underline, add it back */
+a {
+  text-decoration: underline;
+  text-decoration-color: var(--body-text-color);
 }
 
 img {
