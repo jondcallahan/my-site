@@ -112,8 +112,8 @@ img {
   grid-auto-flow: column;
   height: 30px;
   align-content: center;
-  width: fit-content;
-  gap: var(--size-fluid-5);
+  justify-content: space-between;
+  width: var(--size-fluid-9);
 }
 
 .icon {
