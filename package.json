@@ -1,6 +1,4 @@
 {
-  "name": "minimalist-site-vite",
-  "version": "0.0.0",
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy"
@@ -10,9 +8,7 @@
     "concurrently": "^7.6.0",
     "cssnano": "^5.0.15",
     "postcss": "^8.4.5",
-    "postcss-cli": "^10.1.0",
-    "sqip-cli": "^1.0.0-alpha.43",
-    "vite": "^4.0.0"
+    "sqip-cli": "^1.0.0-alpha.43"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^4.5.0",
@@ -20,9 +16,5 @@
     "open-props": "^1.5.1",
     "postcss-import": "^15.1.0",
     "postcss-jit-props": "^1.0.4"
-  },
-  "volta": {
-    "node": "16.13.1",
-    "npm": "8.3.0"
   }
 }
