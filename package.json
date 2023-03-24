@@ -1,30 +1,20 @@
 {
-  "name": "minimalist-site-vite",
-  "version": "0.0.0",
   "scripts": {
-    "dev": "concurrently npm:dev:vite npm:dev:css",
-    "dev:vite": "vite --host",
-    "dev:css": "postcss -o bundled.css style.css -w",
-    "build:css": "postcss -o bundled.css style.css",
-    "build": "npm run build:css && vite build",
-    "preview": "vite preview"
+    "dev": "eleventy --serve",
+    "build": "eleventy"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^2.0.0",
     "concurrently": "^7.6.0",
     "cssnano": "^5.0.15",
     "postcss": "^8.4.5",
-    "postcss-cli": "^10.1.0",
-    "vite": "^4.0.0",
     "sqip-cli": "^1.0.0-alpha.43"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^4.5.0",
+    "eleventy-plugin-postcss": "^1.0.4",
     "open-props": "^1.5.1",
     "postcss-import": "^15.1.0",
     "postcss-jit-props": "^1.0.4"
-  },
-  "volta": {
-    "node": "16.13.1",
-    "npm": "8.3.0"
   }
 }
