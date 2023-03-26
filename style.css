@@ -14,12 +14,23 @@
     U+FEFF, U+FFFD;
 }
 
+/* newsreader-latin-400-normal*/
+@font-face {
+  font-family: "Newsreader";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("./fonts/newsreader-latin-400-normal.woff2") format("woff2"),
+    url("./fonts/newsreader-latin-400-normal.woff") format("woff");
+}
+
 :root {
   --body-text-color: var(--gray-8);
   --body-background-color: var(--gray-2);
   --body-border-color: var(--gray-1);
   --brand: var(--indigo-5);
   --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
+  --font-serif: "Newsreader", Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,7 +49,7 @@ body {
   display: grid;
   place-content: center;
   background-color: var(--body-background-color);
-  font-family: Georgia, var(--font-serif);
+  font-family: var(--font-serif);
 }
 
 @media screen and (min-width: 900px) and (min-height: 900px) {

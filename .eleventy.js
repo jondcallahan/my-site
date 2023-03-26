@@ -9,6 +9,10 @@ module.exports = function (eleventyConfig) {
       "fonts/jetbrains-mono-latin-600-normal.woff2",
     "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff":
       "fonts/jetbrains-mono-latin-600-normal.woff",
+    "node_modules/@fontsource/newsreader/files/newsreader-latin-400-normal.woff2":
+      "fonts/newsreader-latin-400-normal.woff2",
+    "node_modules/@fontsource/newsreader/files/newsreader-latin-400-normal.woff":
+      "fonts/newsreader-latin-400-normal.woff",
   });
   eleventyConfig.addPlugin(PostCSSPlugin, postcssConfig);
 
