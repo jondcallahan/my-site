@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^4.5.12",
-    "@fontsource/newsreader": "^4.5.10",
     "eleventy-plugin-postcss": "^1.0.4",
     "open-props": "^1.5.7",
     "postcss-import": "^15.1.0",

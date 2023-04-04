@@ -14,23 +14,13 @@
     U+FEFF, U+FFFD;
 }
 
-/* newsreader-latin-400-normal*/
-@font-face {
-  font-family: "Newsreader";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 500;
-  src: url("./fonts/newsreader-latin-500-normal.woff2") format("woff2"),
-    url("./fonts/newsreader-latin-500-normal.woff") format("woff");
-}
-
 :root {
   --body-text-color: var(--gray-8);
   --body-background-color: var(--gray-2);
   --body-border-color: var(--gray-1);
   --brand: var(--indigo-5);
   --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
-  --font-serif: "Newsreader", Georgia, serif;
+  --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
 }
 
 @media (prefers-color-scheme: dark) {
