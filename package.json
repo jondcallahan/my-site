@@ -4,17 +4,17 @@
     "build": "eleventy"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "cssnano": "^5.0.15",
-    "postcss": "^8.4.5",
+    "@11ty/eleventy": "^2.0.1",
+    "cssnano": "^6.0.0",
+    "postcss": "^8.4.21",
     "sqip-cli": "^1.0.0-alpha.43"
   },
   "dependencies": {
-    "@fontsource/jetbrains-mono": "^4.5.0",
+    "@fontsource/jetbrains-mono": "^4.5.12",
     "@fontsource/newsreader": "^4.5.10",
     "eleventy-plugin-postcss": "^1.0.4",
-    "open-props": "^1.5.6",
+    "open-props": "^1.5.7",
     "postcss-import": "^15.1.0",
-    "postcss-jit-props": "^1.0.12"
+    "postcss-jit-props": "^1.0.13"
   }
 }
