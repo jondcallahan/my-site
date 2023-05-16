@@ -104,4 +104,5 @@ a {
 
 :where(:not(pre) > code, kbd) {
   white-space: pre-wrap;
+  word-break: break-word;
 }

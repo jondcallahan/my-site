@@ -6,6 +6,7 @@ h2 {
 }
 pre {
   white-space: pre-wrap;
+  overflow-x: auto;
   padding: var(--size-2) var(--size-3);
   background-color: var(--body-border-color);
   border-radius: var(--radius-2);
