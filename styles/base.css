@@ -7,8 +7,8 @@
   font-style: normal;
   font-display: swap;
   font-weight: 600;
-  src: url("./fonts/jetbrains-mono-latin-600-normal.woff2") format("woff2"),
-    url("./fonts/jetbrains-mono-all-600-normal.woff") format("woff");
+  src: url("../fonts/jetbrains-mono-latin-600-normal.woff2") format("woff2"),
+    url("../fonts/jetbrains-mono-all-600-normal.woff") format("woff");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
@@ -20,7 +20,9 @@
   --body-border-color: var(--gray-1);
   --brand: var(--indigo-5);
   --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
+  --jon-font-mono: var(--font-mono);
   --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --jon-font-serif: var(--font-serif);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -98,30 +100,4 @@ a:hover {
 a {
   text-decoration: underline;
   text-decoration-color: var(--body-text-color);
-}
-
-img {
-  background-size: cover;
-  /* To generage the background image run  `$ node ./sqip.js` in the terminal */
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3e%3cfilter id='prefix__a'%3e%3cfeGaussianBlur stdDeviation='12'/%3e%3c/filter%3e%3crect width='100%25' height='100%25' fill='%23444'/%3e%3cg filter='url(%23prefix__a)'%3e%3cg fill-opacity='.5' transform='translate(.6 .6) scale(1.17188)'%3e%3cpath fill='white' d='M135 40-12 271l261-5z'/%3e%3ccircle r='1' fill='white' transform='matrix(6.04188 -75.09347 101.855 8.19506 126.2 222)'/%3e%3ccircle r='1' transform='rotate(-41.4 262.9 -174.1) scale(26.9553 32.95619)'/%3e%3ccircle r='1' fill='%23040404' transform='matrix(12.8568 -40.80469 27.2926 8.5994 67.4 124.8)'/%3e%3cpath fill='white' d='m246.5 56-39.8-27 12.8-19 39.8 26.8z'/%3e%3ccircle cx='147' cy='233' r='82' fill='white'/%3e%3cpath fill='%23f8f8f8' d='m86.2 97 65.7 14.5-4.1-55.1-40.8-2.7z'/%3e%3ccircle r='1' transform='matrix(-17.31359 -.87295 3.00108 -59.52154 .5 225.8)'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
-  border-radius: var(--radius-blob-2);
-  box-shadow: var(--shadow-4);
-  aspect-ratio: var(--ratio-box);
-  width: var(--size-fluid-8);
-}
-
-.links {
-  display: grid;
-  grid-auto-flow: column;
-  height: 30px;
-  align-content: center;
-  justify-content: space-between;
-  width: var(--size-fluid-9);
-}
-
-.icon {
-  width: var(--font-size-1);
-  stroke-width: 0;
-  stroke: var(--body-text-color);
-  fill: var(--body-text-color);
 }

@@ -1,0 +1,12 @@
+:root {
+  --surface-2: var(--body-border-color);
+}
+h2 {
+  font-size: var(--font-size-4);
+}
+pre {
+  white-space: pre-wrap;
+  padding: var(--size-2) var(--size-3);
+  background-color: var(--body-border-color);
+  border-radius: var(--radius-2);
+}

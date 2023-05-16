@@ -1,0 +1,18 @@
+body {
+  align-content: unset;
+}
+ul {
+  padding-inline-start: 0;
+  display: grid;
+  gap: var(--size-4);
+}
+li {
+  list-style: none;
+  padding: 0;
+}
+details {
+  background-color: var(--body-border-color);
+}
+summary {
+  font-family: var(--jon-font-mono);
+}

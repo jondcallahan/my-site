@@ -2,7 +2,7 @@ const postcssConfig = require("./postcss.config.js");
 const PostCSSPlugin = require("eleventy-plugin-postcss");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addWatchTarget("./style.css");
+  eleventyConfig.addWatchTarget("./styles");
   eleventyConfig.addPassthroughCopy({
     public: ".",
     "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff2":
