@@ -101,3 +101,7 @@ a {
   text-decoration: underline;
   text-decoration-color: var(--body-text-color);
 }
+
+:where(:not(pre) > code, kbd) {
+  white-space: pre-wrap;
+}
