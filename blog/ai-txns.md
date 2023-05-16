@@ -1,5 +1,5 @@
 ---
-date: 2023-05-17
+date: 2023-05-16
 title: Budgeting with ChatGPT
 layout: layout-post.html
 tags: post
