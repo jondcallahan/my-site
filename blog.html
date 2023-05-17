@@ -17,7 +17,7 @@
           <li>
             <a href="{{ post.url }}">{{ post.data.title }} </a>
             <p>
-              <time>{{ page.date | date: "%a, %b %d, %Y" }}</time>
+              <time>{{ post.date | date: "%a, %b %d, %Y" }}</time>
               <br />
               {{ post.data.description }}
             </p>
