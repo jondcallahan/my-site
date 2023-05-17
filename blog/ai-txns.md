@@ -32,7 +32,7 @@ A webhook allows two applications to exchange data in real time. In our case we'
 1. Create a new repo in GitHub.
 2. Create a new Deno Deploy project and choose the repo from step 1. Deno Deploy will automatically deploy the code anytime you push to the `main` branch of the repo in seconds.
 3. Push the code snippet below to your GitHub repo in a file called `main.ts`
-```
+```ts
 import { serve } from "https://deno.land/std@0.187.0/http/server.ts";
 
 serve((req: Request) => new Response("Hello World"));
@@ -47,7 +47,7 @@ Now that your webhook is online you can add the URL to Postmark. I set up a rout
 ## Pre-processing the email
 Since OpenAI models including ChatGPT charge by the token (roughly every syllable of text you send it) it's important to strip out any unneeded text before sending it over. For the Chase alerts, there is a lot of extra markup and text. I landed on converting the HTML to text after removing all elements with `display: none` and then removing even more text that's specific to the Chase alerts. That's it. We now have a string like
 
-```
+```txt
 Transaction alert You made a $110.21 transaction Account Chase Sapphire Reserve (...####) Date Apr 30, 2023 at 2:23 PM ET Merchant TST* LEYE - ABA - CH Amount $110.21
 ```
 ## Prompting ChatGPT
@@ -57,7 +57,7 @@ I've gone through a number of iterations for my prompt. It's been constant impro
 
 I've found it's good to give a sample output of what I'd like the JSON to look like and then explain the details of the schema. It's remarkable that with just a few sentences and one example, ChatGPT is able to understand my intention for it and the specific structure of output I'm looking for. It has worked incredibly over the past month that I've been running this. As of the time of publishing my prompt is:
 
-```
+```json
 Format this credit card transaction as valid JSON like this {"date": "2021-12-31", "time": "4:35 PM ET", "amount": "$1.00", "account": "Checking (...123)", "merchant": "Sweet Green", "category": "Restaurant"}.
 
 "merchant" should be enriched to the common, well-known merchant name without store specific, location, or point-of-sale provider info, formatted for legibility. If the merchant is part of a restaurant group, extract the specific restaurant name instead of the group name.
@@ -69,7 +69,7 @@ It is almost entirely generic except for the sentence about restaurant groups. B
 ## Calling the ChatGPT API
 Now that we have the prompt and payload, ChatGPT can work it's magic ✨. We use the prompt as the system message and the transaction payload as the user message. When using the `gpt-3.5-turbo` model we'll get back something like
 
-```
+```json
 {
   date: "2023-04-30",
   time: "2:23 PM ET",
@@ -84,7 +84,7 @@ Amazing! From a garbled up transaction string we now have a well formatted merch
 ## Storing in Airtable
 Airtable is an online spreadsheet-database-hybrid. It has a lot of powerful features, but for this project the most helpful one is how easy it is to save data in. After setting up a new Airtable spreadsheet (base, in their parlance) with the same columns as the JSON above, we can send the response from ChatGPT over to Airtable with a straightforward `POST` request. My request looks like:
 
-```
+```ts
 await fetch(
   `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`,
   {

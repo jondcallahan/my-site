@@ -5,8 +5,10 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "cssnano": "^6.0.0",
     "postcss": "^8.4.21",
+    "prismjs": "^1.29.0",
     "sqip-cli": "^1.0.0-alpha.43"
   },
   "dependencies": {

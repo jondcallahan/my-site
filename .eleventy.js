@@ -1,5 +1,6 @@
 const postcssConfig = require("./postcss.config.js");
 const PostCSSPlugin = require("eleventy-plugin-postcss");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./styles");
@@ -9,8 +10,15 @@ module.exports = function (eleventyConfig) {
       "fonts/jetbrains-mono-latin-600-normal.woff2",
     "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff":
       "fonts/jetbrains-mono-latin-600-normal.woff",
+    "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2":
+      "fonts/jetbrains-mono-latin-400-normal.woff2",
+    "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff":
+      "fonts/jetbrains-mono-latin-400-normal.woff",
+    "node_modules/prismjs/themes/prism-okaidia.min.css":
+      "styles/prism-okaidia.min.css",
   });
   eleventyConfig.addPlugin(PostCSSPlugin, postcssConfig);
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   return {
     dir: {
