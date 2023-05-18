@@ -4,10 +4,9 @@ const postcssImport = require("postcss-import");
 const cssNano = require("cssnano");
 
 module.exports = {
-  // only vars used are in build output
   plugins: [
     postcssImport(),
-    postcssJitProps(OpenProps),
+    postcssJitProps(OpenProps), // only vars used are in build output
     cssNano({
       preset: "default",
     }),

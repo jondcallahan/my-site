@@ -14,8 +14,6 @@ module.exports = function (eleventyConfig) {
       "fonts/jetbrains-mono-latin-400-normal.woff2",
     "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff":
       "fonts/jetbrains-mono-latin-400-normal.woff",
-    "node_modules/prismjs/themes/prism-okaidia.min.css":
-      "styles/prism-okaidia.min.css",
   });
   eleventyConfig.addPlugin(PostCSSPlugin, postcssConfig);
   eleventyConfig.addPlugin(syntaxHighlight);

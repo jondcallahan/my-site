@@ -14,5 +14,5 @@ details {
   background-color: var(--body-border-color);
 }
 summary {
-  font-family: var(--jon-font-mono);
+  font-family: var(--font-mono-safe);
 }
