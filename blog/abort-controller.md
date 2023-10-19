@@ -1,6 +1,6 @@
 ---
 date: 2023-10-18
-title: You probaby have a race condition
+title: You probably have a race condition
 layout: layout-post.html
 tags: post
 description: How to prevent race conditions in react effects.
@@ -22,7 +22,7 @@ useEffect(() => {
 }, [customerId]);
 ```
 
-This works great on localhost with a stable and fast wifi connection, but the real world is a bit messier. Users' networks are jittery and inconsistent. A cloud may pass over a satellite, a user may walk between two access points, or a user may just have a slow connection. On the server side we might have a [noisy-neighbor](https://en.wikipedia.org/wiki/Cloud_computing_issues%23Performance_interference_and_noisy_neighbors), a blip requiring a retry, or some other random source of latency. In these cases, the user may change the dropdown selection before the API call has finished. This has potential to cause a race condition!
+This works great on localhost with a stable and fast wifi connection, but the real world is a bit messier. Users’ networks are jittery and inconsistent. A cloud may pass over a satellite, a user may walk between two access points, or a user may just have a slow connection. On the server side we might have a [noisy-neighbor](https://en.wikipedia.org/wiki/Cloud_computing_issues%23Performance_interference_and_noisy_neighbors), a blip requiring a retry, or some other random source of latency. In these cases, the user may change the dropdown selection before the API call has finished. This has potential to cause a race condition!
 
 ## Race conditions overview
 
@@ -65,7 +65,7 @@ Notice how we’re constructing the controller, passing the result as a `signal`
 When we make use of the `AbortController` the browser will throw a specific error. We can handle these errors by excluding those with name `AbortError`. That will allow us to handle only true errors like `400…500` level errors (ex. bad or unauthorized requests, or server unavailable)  and avoid mistakenly marking this service as degraded.
 
 ## Conclusion
-Using only a few more lines of code we can make our apps more resilient. Now when a user has a network issue or our server hits unexpected latency we can make sure the UI reflects the users expectations. We will now have a better user experience and a more secure app!
+Using only a few more lines of code we can make our apps more resilient. Now when a user has a network issue or our server hits unexpected latency we can make sure the UI reflects the user’s expectations. We will now have a better user experience and a more secure app!
 
 ## Useful links
 * [React useEffect](https://react.dev/reference/react/useEffect)
