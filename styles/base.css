@@ -114,3 +114,8 @@ a {
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+:where(li) {
+  margin-block-start: var(--size-4);
+  margin-block-end: var(--size-4);
+}
