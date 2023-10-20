@@ -30,9 +30,15 @@ This works great on localhost with a stable and fast wifi connection, but the re
 
 A race condition happens when two requests are made and they come back in a different order than we expect. For example, request 1 is made and there is 500ms of latency due to some environmental reason. Request 2 is made and this one is much faster, only 150ms. Request 2 will resolve, then a short time later request 1 will resolve. If we don't handle this case in our code we will end up with the wrong data. Depending on the situation, this could be a minor annoyance or a major security issue, for example sending an invoice to the wrong customer on behalf of your user.
 
+In the UI it looks like this:
+
+<video width="100%" controls>
+  <source src="/images/posts/abort-controller/before.mp4" type="video/mp4">
+</video>
+
 ## Solving the race condition
 
-When the user changes the dropdown, we should halt (abort) the in-flight request. The browser makes this easy by using the `new AbortController()` constructor. An `AbortController` allows us to programmatically halt any fetch requests, whenever we want. In this case, we want to stop the request for customer 1 since the user has changed the dropdown to customer 2. We can easily modify the code snippet to do this:
+When the user changes the dropdown, we should halt (abort) the in-flight request. The browser makes this easy by using the `new AbortController()` constructor. An `AbortController` allows us to programmatically halt any fetch requests, whenever we want. In this case, we want to stop the request for customer 1 since the user has changed the dropdown to customer 2. We can modify the code snippet to do this:
 ```javascript
 useEffect(() => {
   const controller = new AbortController();
@@ -61,6 +67,13 @@ useEffect(() => {
 ```
 
 Notice how we’re constructing the controller, passing the result as a `signal` to the fetch call, and then using the same controller in the effect’s clean up function. Calling the `controller.abort()` method in the clean up function will abort the in-flight request for customer 1 🎉.
+
+After making these changes, the UI is now fixed. The app state will now stay in sync with the user’s expectations:
+
+<video width="100%" controls>
+  <source src="/images/posts/abort-controller/after.mp4" type="video/mp4">
+</video>
+
 ## Considerations
 When we make use of the `AbortController` the browser will throw a specific error. We can handle these errors by excluding those with name `AbortError`. That will allow us to handle only true errors like `400…500` level errors (ex. bad or unauthorized requests, or server unavailable)  and avoid mistakenly marking this service as degraded.
 
