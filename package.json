@@ -8,16 +8,12 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "cssnano": "^6.0.0",
-    "postcss": "^8.4.21",
     "sqip-cli": "^1.0.0-alpha.43"
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^5.2.8",
     "@fontsource/mona-sans": "^5.2.8",
-    "eleventy-plugin-postcss": "^1.0.4",
     "markdown-it": "^14.1.0",
-    "markdown-it-shiki": "^0.9.0",
-    "postcss-import": "^15.1.0"
+    "markdown-it-shiki": "^0.9.0"
   }
 }
