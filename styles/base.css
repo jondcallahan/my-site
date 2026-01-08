@@ -1,121 +1,521 @@
-/* Import the minified normalize because this doesn't get compiled by postcss */
-@import "open-props/normalize.min.css";
-
-/* jetbrains-mono-latin-600-normal*/
+/* V3 TECHNICAL SYSTEM - BASE.CSS */
+/* /* @import "open-props/normalize.min.css"; */
+/* Fontsource Imports (Inlined) */
+/* mona-sans-vietnamese-400-normal */
 @font-face {
-  font-family: "JetBrains Mono";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 600;
-  src: url("../fonts/jetbrains-mono-latin-600-normal.woff2") format("woff2"),
-    url("../fonts/jetbrains-mono-latin-600-normal.woff") format("woff");
-}
-/* jetbrains-mono-latin-400-normal*/
-@font-face {
-  font-family: "JetBrains Mono";
+  font-family: 'Mona Sans';
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src: url("../fonts/jetbrains-mono-latin-400-normal.woff2") format("woff2"),
-    url("../fonts/jetbrains-mono-latin-400-normal.woff") format("woff");
+  src: url(./files/mona-sans-vietnamese-400-normal.woff2) format('woff2'), url(./files/mona-sans-vietnamese-400-normal.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+/* mona-sans-latin-ext-400-normal */
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/mona-sans-latin-ext-400-normal.woff2) format('woff2'), url(./files/mona-sans-latin-ext-400-normal.woff) format('woff');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* mona-sans-latin-400-normal */
+@font-face {
+  font-family: 'Mona Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/mona-sans-latin-400-normal.woff2) format('woff2'), url(./files/mona-sans-latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* jetbrains-mono-cyrillic-ext-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/jetbrains-mono-cyrillic-ext-400-normal.woff2) format('woff2'), url(./files/jetbrains-mono-cyrillic-ext-400-normal.woff) format('woff');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+/* jetbrains-mono-cyrillic-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/jetbrains-mono-cyrillic-400-normal.woff2) format('woff2'), url(./files/jetbrains-mono-cyrillic-400-normal.woff) format('woff');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* jetbrains-mono-greek-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/jetbrains-mono-greek-400-normal.woff2) format('woff2'), url(./files/jetbrains-mono-greek-400-normal.woff) format('woff');
+  unicode-range: U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;
+}
+
+/* jetbrains-mono-vietnamese-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/jetbrains-mono-vietnamese-400-normal.woff2) format('woff2'), url(./files/jetbrains-mono-vietnamese-400-normal.woff) format('woff');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+
+/* jetbrains-mono-latin-ext-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/jetbrains-mono-latin-ext-400-normal.woff2) format('woff2'), url(./files/jetbrains-mono-latin-ext-400-normal.woff) format('woff');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* jetbrains-mono-latin-400-normal */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(./files/jetbrains-mono-latin-400-normal.woff2) format('woff2'), url(./files/jetbrains-mono-latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
-  /* FYI if you use these variables in another file, they will be overwritten to the original value.
-    This is because the postcss jit plugin will inline any variables that match the ones provided by openprops.
-  */
-  --body-text-color: var(--gray-8);
-  --body-background-color: var(--gray-2);
-  --body-border-color: var(--gray-1);
-  --brand: var(--indigo-5);
-  --font-mono: "JetBrains Mono", "Courier New", Courier, monospace;
-  --font-mono-safe: var(--font-mono);
-  --font-serif: Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  /* Colors */
+  --bg: #ffffff;
+  --text: #050505;
+  --text-dim: #666666;
+  --grid: #e5e5e5;
+  --accent: #0000ff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-text-color: var(--gray-3);
-    --body-background-color: var(--gray-8);
-    --body-border-color: var(--gray-9);
+    --bg: #0a0a0a;
+    --text: #f0f0f0;
+    --text-dim: #888888;
+    --grid: #333333;
+    --accent: #ffff00;
   }
 }
 
-html {
-  background-color: var(--body-border-color);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
+html,
 body {
-  display: grid;
-  place-content: center;
-  background-color: var(--body-background-color);
-  font-family: var(--font-serif);
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Mona Sans', system-ui, sans-serif;
+  font-size: 15px;
+  /* Technical base size */
+  line-height: 1.5;
+  margin: 0;
 }
 
-@media screen and (min-width: 900px) and (min-height: 900px) {
-  body {
-    border-radius: var(--radius-4);
-  }
-  html {
-    padding: 40px;
-  }
+img,
+ol {
+  max-width: 100%;
 }
 
-article {
+/* LAYOUT GRID */
+.layout-grid {
   display: grid;
-  gap: var(--size-4);
-  max-width: var(--size-content-3);
-  padding: var(--size-8) var(--size-4);
+  grid-template-columns: 320px 1fr;
+  min-height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
+  border-left: 1px solid var(--grid);
+  border-right: 1px solid var(--grid);
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  /* Use dynamic viewport height */
+  max-height: 100dvh;
+  border-right: 1px solid var(--grid);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+
+.identity-top {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 2px;
+  filter: grayscale(100%);
+  display: block;
 }
 
 h1 {
-  line-height: var(--font-lineheight-1);
-  font-size: var(--font-size-fluid-2);
-  font-family: var(--font-mono);
+  font-size: 2rem;
+  line-height: 0.9;
+  margin: 0 0 1rem 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.meta-block {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  opacity: 0.5;
+}
+
+/* SIDEBAR LINKS */
+.sidebar-links {
+  border-top: 1px solid var(--grid);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-links a {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--grid);
+  color: var(--text);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  transition: background 0.15s ease;
+}
+
+.sidebar-links a:last-child {
+  border-bottom-style: inset;
+}
+
+.sidebar-links a:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.link-arrow {
+  opacity: 0.3;
+}
+
+.sidebar-links a:hover .link-arrow {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* MAIN CONTENT */
+.content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  /* Prevent flex items from overflowing */
+}
+
+/* SECTIONS */
+.content-section {
+  border-bottom: 1px solid var(--grid);
+  min-width: 0;
+  /* Prevent overflow in flexbox */
+}
+
+.content-section:last-child {
+  border-bottom: none;
+}
+
+.section-header {
+  padding: 2rem;
+  border-bottom: 1px solid var(--grid);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  padding: 0.2rem 0.4rem;
+  background: var(--text);
+  color: var(--bg);
+  border-radius: 2px;
 }
 
 h2 {
-  line-height: var(--font-lineheight-1);
-  font-size: var(--font-size-2);
-  /* Overwrite the normalize/reset rule of max width 25ch for h2's */
-  max-inline-size: var(--size-content-3);
-  font-family: var(--font-mono);
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-hr {
-  margin-top: 0;
-  margin-bottom: 0;
-  width: 25%;
-  min-width: 120px;
-  background-color: var(--body-text-color);
+.section-body {
+  padding: 3rem;
 }
 
-p {
-  font-size: var(--font-size-2);
-  line-height: var(--font-lineheight-4);
+/* TEXT BLOCK (BIO) */
+.text-block {
+  min-width: 0;
+  /* Prevent flex overflow */
+  overflow-wrap: break-word;
 }
 
-h1,
-h2,
-p,
-a,
-a:visited,
-a:hover {
-  color: var(--body-text-color);
+.text-block p {
+  max-width: 60ch;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
 }
 
-/* Open props normalize gets rid of the underline, add it back */
-a {
-  text-decoration: underline;
-  text-decoration-color: var(--body-text-color);
+.text-block a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--text-dim);
 }
 
-:where(:not(pre) > code, kbd) {
+.text-block a:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: transparent;
+}
+
+/* PROJECT FEED */
+.project-feed {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  padding: 3rem;
+  border-bottom: 1px solid var(--grid);
+  transition: background 0.2s ease;
+}
+
+.project-row:last-child {
+  border-bottom: none;
+}
+
+.project-row:hover {
+  background: rgba(128, 128, 128, 0.03);
+  /* Subtle highlight */
+}
+
+.project-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.project-year {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.project-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.project-main p {
+  margin: 0;
+  color: var(--text-dim);
+  max-width: 50ch;
+}
+
+.action-link {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--grid);
+  padding: 0.6rem 1.2rem;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  transition: all 0.2s;
+}
+
+.action-link:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+
+/* CODE BLOCKS (SHIKI) */
+pre.shiki {
+  padding: 1.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  /* Allow scrolling if needed */
+  overflow-wrap: break-word;
+  /* Break long words */
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  border: 1px solid var(--grid);
+  margin: 2rem 0;
   white-space: pre-wrap;
+  /* Enable wrapping */
   word-break: break-word;
+  /* Ensure long words break */
+  max-width: 100%;
+  /* Ensure it doesn't exceed container */
+  box-sizing: border-box;
 }
 
-:where(li) {
-  margin-block-start: var(--size-4);
-  margin-block-end: var(--size-4);
+/* Better code block experience on mobile */
+@media (max-width: 900px) {
+  pre.shiki {
+    padding: 1rem;
+    line-height: 1.5;
+    /* Full bleed code blocks to prevent awkward overflow */
+    margin-left: -2rem;
+    margin-right: -2rem;
+    max-width: -webkit-fill-available;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    /* Allow internal scroll if needed */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+  }
+
+  /* Ensure the layout doesn't cause horizontal scroll */
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  .content {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Ensure h1 doesn't overflow */
+  h1 {
+    font-size: 1.5rem;
+    word-break: break-word;
+  }
+
+  /* Fix meta block potential overflow */
+  .meta-block {
+    max-width: 100%;
+  }
+
+  .meta-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}
+
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  background: rgba(128, 128, 128, 0.1);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+pre.shiki code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  /* Inherit shiki colors */
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+    border: none;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--grid);
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .identity-top {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .sidebar-links {
+    width: 100%;
+  }
+
+  .sidebar-links a {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem;
+  }
+
+  .section-body {
+    padding: 2rem;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
 }

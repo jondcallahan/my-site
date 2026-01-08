@@ -1,45 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{description}}" />
-    <meta name="author" content="Jon Callahan" />
-    <meta
-      name="publish_date"
-      property="og:publish_date"
-      content="{{page.date}}"
-    />
 
-    <title>{{title}} | Jon Callahan</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{description}}" />
+  <meta name="author" content="Jon Callahan" />
+  <meta name="publish_date" property="og:publish_date" content="{{page.date}}" />
 
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../../styles/base.css" />
-    <link rel="stylesheet" href="../../styles/layout-post.css" />
-    <link rel="stylesheet" href="../../styles/prism-shades-of-purple.css" />
+  <title>{{title}} | Jon Callahan</title>
 
-    <script
-      data-goatcounter="https://joncallahan.goatcounter.com/count"
-      async
-      src="//gc.zgo.at/count.js"
-    ></script>
-  </head>
-  <body>
-    <main>
-      <article>
-        <h1>{{title}}</h1>
-        <p>Published on <time>{{ page.date | date: "%a, %b %d, %Y" }}</time></p>
-        {{content}}
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../../styles/base.css" />
+  <link rel="stylesheet" href="../../styles/layout-post.css" />
+
+  <script data-goatcounter="https://joncallahan.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+
+<body>
+  <div class="layout-grid">
+    <!-- SIDEBAR (Reused from Index) -->
+    <header class="sidebar">
+      <div class="identity-top">
+        <a href="/" style="text-decoration: none; border: none;">
+          <picture>
+            <source type="image/avif" srcset="/images/headshot_bw.avif" />
+            <source type="image/webp" srcset="/images/headshot_bw.webp" />
+            <img src="/images/headshot_bw.jpg" alt="Jon Callahan" class="avatar" />
+          </picture>
+        </a>
+
+        <div class="identity-info">
+          <h1><a href="/" style="text-decoration: none; color: inherit; border: none;">JON CALLAHAN</a></h1>
+          <div class="meta-block">
+            <span class="meta-row"><span class="label">ROLE:</span> FULL-STACK AI ENGINEER</span>
+            <span class="meta-row"><span class="label">LOC:</span> CHICAGO, IL</span>
+            <span class="meta-row"><span class="label">ORG:</span> INTUIT</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="sidebar-links">
+        <a href="/" class="internal-link">
+          <span class="link-label">HOME</span>
+          <span class="link-arrow"><-< /span>
+        </a>
+        <a href="https://github.com/jondcallahan" target="_blank" rel="noopener noreferrer">
+          <span class="link-label">GITHUB</span>
+          <span class="link-arrow">-></span>
+        </a>
+        <a href="https://x.com/joncallahan" target="_blank" rel="noopener noreferrer">
+          <span class="link-label">X</span>
+          <span class="link-arrow">-></span>
+        </a>
+      </nav>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="content">
+      <article class="content-section">
+        <div class="section-header">
+          <span class="section-id">ARTICLE</span>
+          <time style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem;">{{ page.date | date: "%Y.%m.%d"
+            }}</time>
+        </div>
+
+        <div class="section-body text-block">
+          <h1 style="font-size: 2rem; margin-bottom: 2rem; text-transform: uppercase;">{{title}}</h1>
+          {{content}}
+
+          <hr style="margin-top: 4rem; border: none; border-top: 1px solid var(--grid);" />
+          <p style="font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--text-dim);">
+            <a href="/">Index</a> / <a href="/blog">All Posts</a>
+          </p>
+        </div>
       </article>
     </main>
-    <footer>
-      <article>
-        <hr />
-        <p>
-          <a href="/">Home</a> |
-          <a href="/blog">All posts</a>
-        </p>
-      </article>
-    </footer>
-  </body>
+  </div>
+</body>
+
 </html>
