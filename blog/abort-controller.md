@@ -4,6 +4,7 @@ title: You probably have a race condition
 layout: layout-post.html
 tags: post
 description: How to prevent race conditions in react effects.
+category: WRITING / REACT
 ---
 ## Intro
 

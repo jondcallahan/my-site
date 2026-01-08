@@ -4,6 +4,7 @@ title: Budgeting with ChatGPT
 layout: layout-post.html
 tags: post
 description: How I use the ChatGPT API to categorize every purchase in real-time.
+category: WRITING / AI
 ---
 ## Intro
 Coming up with a budget is hard. Tracking how well you're sticking to that budget is even harder. In this blog post I'll show you how I use the ChatGPT API to track, categorize, and monitor my spending. The best part: it only took me about 2 hours to figure out and set up and now I'll share all [the code](https://github.com/jondcallahan/ai-txns-categorizing) I use so you can set it up in even less time for yourself.

@@ -4,6 +4,7 @@ title: Where AI Value Accumulates
 description: Why 90% of AI's value will be captured by applications, not foundation models.
 layout: layout-post.html
 tags: post
+category: WRITING / AI
 ---
 I was at a dinner and someone asked if it would be better to invest in the foundation models or the applications built on top of them. I believe the answer is both; but it will be lopsided towards the application layer.
 
