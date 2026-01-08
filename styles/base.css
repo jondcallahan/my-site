@@ -427,7 +427,9 @@ pre.shiki {
 
   /* Ensure the layout doesn't cause horizontal scroll */
   html,
-  body {
+  body,
+  img,
+  ol {
     overflow-x: hidden;
     max-width: 100%;
   }
