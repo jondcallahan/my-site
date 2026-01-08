@@ -5,3 +5,41 @@
 h2 {
   font-size: var(--font-size-4);
 }
+
+/* Ensure blog post content doesn't cause horizontal scroll */
+@media (max-width: 900px) {
+  /* Prevent any element from being wider than the viewport */
+  .text-block {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  .text-block * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* Ensure images and other media don't overflow */
+  .text-block img,
+  .text-block video,
+  .text-block iframe {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure links and inline code don't cause overflow */
+  .text-block a,
+  .text-block code {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Fix any potential overflow from tables */
+  .text-block table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+}

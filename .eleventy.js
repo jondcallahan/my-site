@@ -1,7 +1,3 @@
-const postcssConfig = require("./postcss.config.js");
-const PostCSSPlugin = require("eleventy-plugin-postcss");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./styles");
   eleventyConfig.addPassthroughCopy({
@@ -9,8 +5,22 @@ module.exports = function (eleventyConfig) {
     "node_modules/@fontsource/mona-sans/files": "styles/files",
     "node_modules/@fontsource/jetbrains-mono/files": "styles/files",
   });
-  eleventyConfig.addPlugin(PostCSSPlugin, postcssConfig);
-  eleventyConfig.addPlugin(syntaxHighlight);
+
+
+  const markdownIt = require("markdown-it");
+  const markdownItShiki = require("markdown-it-shiki").default;
+
+  const md = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true,
+  });
+
+  md.use(markdownItShiki, {
+    theme: "vitesse-black",
+  });
+
+  eleventyConfig.setLibrary("md", md);
 
   return {
     dir: {
