@@ -6,14 +6,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./styles");
   eleventyConfig.addPassthroughCopy({
     public: ".",
-    "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff2":
-      "fonts/jetbrains-mono-latin-600-normal.woff2",
-    "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-600-normal.woff":
-      "fonts/jetbrains-mono-latin-600-normal.woff",
-    "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff2":
-      "fonts/jetbrains-mono-latin-400-normal.woff2",
-    "node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-400-normal.woff":
-      "fonts/jetbrains-mono-latin-400-normal.woff",
+    "node_modules/@fontsource/mona-sans/files": "styles/files",
+    "node_modules/@fontsource/jetbrains-mono/files": "styles/files",
   });
   eleventyConfig.addPlugin(PostCSSPlugin, postcssConfig);
   eleventyConfig.addPlugin(syntaxHighlight);

@@ -11,7 +11,8 @@
     "sqip-cli": "^1.0.0-alpha.43"
   },
   "dependencies": {
-    "@fontsource/jetbrains-mono": "^4.5.12",
+    "@fontsource/jetbrains-mono": "^5.2.8",
+    "@fontsource/mona-sans": "^5.2.8",
     "eleventy-plugin-postcss": "^1.0.4",
     "open-props": "^1.5.7",
     "postcss-import": "^15.1.0",
