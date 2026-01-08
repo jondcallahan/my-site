@@ -2,6 +2,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./styles");
   eleventyConfig.addPassthroughCopy({
     public: ".",
+    styles: "styles",
     "node_modules/@fontsource/mona-sans/files": "styles/files",
     "node_modules/@fontsource/jetbrains-mono/files": "styles/files",
   });
