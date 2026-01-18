@@ -26,9 +26,11 @@ html, body {
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
+  container-type: inline-size;
+  container-name: main-layout;
 }
 
-/* Container Queries Setup */
+/* Layout Grid */
 .layout-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
@@ -36,8 +38,6 @@ html, body {
   max-width: 1600px;
   margin: 0 auto;
   border-inline: 1px solid var(--grid);
-  container-type: inline-size;
-  container-name: main-layout;
 }
 
 /* Sidebar */
