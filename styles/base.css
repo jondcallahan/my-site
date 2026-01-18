@@ -92,66 +92,49 @@
 }
 
 :root {
-  /* Colors */
-  --bg: #ffffff;
-  --text: #050505;
-  --text-dim: #666666;
-  --grid: #e5e5e5;
-  --accent: #0000ff;
+  color-scheme: light dark;
+  --bg: light-dark(#ffffff, #0a0a0a);
+  --text: light-dark(#050505, #f0f0f0);
+  --text-dim: light-dark(#666666, #888888);
+  --grid: light-dark(#e5e5e5, #333333);
+  --accent: light-dark(#0000ff, #ffff00);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0a0a0a;
-    --text: #f0f0f0;
-    --text-dim: #888888;
-    --grid: #333333;
-    --accent: #ffff00;
-  }
+*, *::before, *::after { box-sizing: border-box; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body {
+html, body {
   height: 100%;
   background: var(--bg);
   color: var(--text);
   font-family: 'Mona Sans', system-ui, sans-serif;
   font-size: 15px;
-  /* Technical base size */
   line-height: 1.5;
   margin: 0;
+  container-type: inline-size;
+  container-name: main-layout;
 }
 
-img,
-ol {
-  max-width: 100%;
-}
-
-/* LAYOUT GRID */
+/* Layout Grid */
 .layout-grid {
   display: grid;
   grid-template-columns: 320px 1fr;
   min-height: 100vh;
   max-width: 1600px;
   margin: 0 auto;
-  border-left: 1px solid var(--grid);
-  border-right: 1px solid var(--grid);
+  border-inline: 1px solid var(--grid);
 }
 
-/* SIDEBAR */
+/* Sidebar */
 .sidebar {
   position: sticky;
   top: 0;
   height: 100dvh;
-  /* Use dynamic viewport height */
-  max-height: 100dvh;
-  border-right: 1px solid var(--grid);
+  border-inline-end: 1px solid var(--grid);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -171,6 +154,10 @@ ol {
   border-radius: 2px;
   filter: grayscale(100%);
   display: block;
+}
+
+h1, h2, h3 {
+  text-wrap: balance;
 }
 
 h1 {
@@ -196,65 +183,40 @@ h1 {
   justify-content: space-between;
 }
 
-.label {
-  opacity: 0.5;
-}
+.label { opacity: 0.5; }
 
-/* SIDEBAR LINKS */
 .sidebar-links {
   border-top: 1px solid var(--grid);
   display: flex;
   flex-direction: column;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--grid);
+    color: var(--text);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: var(--text);
+      color: var(--bg);
+
+      .link-arrow { opacity: 1; color: var(--accent); }
+    }
+  }
 }
 
-.sidebar-links a {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid var(--grid);
-  color: var(--text);
-  text-decoration: none;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
-  transition: background 0.15s ease;
-}
+.link-arrow { opacity: 0.3; }
 
-.sidebar-links a:last-child {
-  border-bottom-style: inset;
-}
+/* Main Content */
+.content { display: flex; flex-direction: column; min-width: 0; }
 
-.sidebar-links a:hover {
-  background: var(--text);
-  color: var(--bg);
-}
-
-.link-arrow {
-  opacity: 0.3;
-}
-
-.sidebar-links a:hover .link-arrow {
-  opacity: 1;
-  color: var(--accent);
-}
-
-/* MAIN CONTENT */
-.content {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  /* Prevent flex items from overflowing */
-}
-
-/* SECTIONS */
-.content-section {
-  border-bottom: 1px solid var(--grid);
-  min-width: 0;
-  /* Prevent overflow in flexbox */
-}
-
-.content-section:last-child {
-  border-bottom: none;
-}
+.content-section { border-bottom: 1px solid var(--grid); }
+.content-section:last-child { border-bottom: none; }
 
 .section-header {
   padding: 2rem;
@@ -281,40 +243,29 @@ h2 {
   text-transform: uppercase;
 }
 
-.section-body {
-  padding: 3rem;
-}
+.section-body { padding: 3rem; }
 
-/* TEXT BLOCK (BIO) */
 .text-block {
-  min-width: 0;
-  /* Prevent flex overflow */
-  overflow-wrap: break-word;
+  p {
+    max-width: 60ch;
+    margin-block-end: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-dim);
+
+    &:hover {
+      background: var(--text);
+      color: var(--bg);
+    }
+  }
 }
 
-.text-block p {
-  max-width: 60ch;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-.text-block a {
-  color: var(--text);
-  text-decoration: none;
-  border-bottom: 1px solid var(--text-dim);
-}
-
-.text-block a:hover {
-  background: var(--text);
-  color: var(--bg);
-  border-color: transparent;
-}
-
-/* PROJECT FEED */
-.project-feed {
-  display: flex;
-  flex-direction: column;
-}
+/* Project Feed */
+.project-feed { display: flex; flex-direction: column; }
 
 .project-row {
   display: grid;
@@ -323,15 +274,9 @@ h2 {
   padding: 3rem;
   border-bottom: 1px solid var(--grid);
   transition: background 0.2s ease;
-}
+  container-type: inline-size;
 
-.project-row:last-child {
-  border-bottom: none;
-}
-
-.project-row:hover {
-  background: rgba(128, 128, 128, 0.03);
-  /* Subtle highlight */
+  &:hover { background: color-mix(in srgb, var(--text) 3%, transparent); }
 }
 
 .project-meta {
@@ -343,16 +288,9 @@ h2 {
   gap: 0.5rem;
 }
 
-.project-year {
-  color: var(--text);
-  font-weight: 600;
-}
+.project-year { color: var(--text); font-weight: 600; }
 
-.project-main {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+.project-main { display: flex; flex-direction: column; gap: 1rem; }
 
 h3 {
   font-size: 1.5rem;
@@ -362,11 +300,7 @@ h3 {
   letter-spacing: -0.01em;
 }
 
-.project-main p {
-  margin: 0;
-  color: var(--text-dim);
-  max-width: 50ch;
-}
+.project-main p { margin: 0; color: var(--text-dim); max-width: 50ch; }
 
 .action-link {
   display: inline-block;
@@ -377,86 +311,30 @@ h3 {
   border: 1px solid var(--grid);
   padding: 0.6rem 1.2rem;
   align-self: flex-start;
-  margin-top: 0.5rem;
   transition: all 0.2s;
+
+  &:hover { background: var(--text); color: var(--bg); }
 }
 
-.action-link:hover {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
+/* Container Query for Layout */
+@container main-layout (max-width: 900px) {
+  .layout-grid { grid-template-columns: 1fr; }
+  .sidebar { height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--grid); }
+  .project-row { grid-template-columns: 1fr; gap: 1rem; padding: 2rem; }
+  .section-body { padding: 2rem; }
 }
 
-
-/* CODE BLOCKS (SHIKI) */
+/* Code Blocks */
 pre.shiki {
   padding: 1.5rem;
   border-radius: 4px;
   overflow-x: auto;
-  /* Allow scrolling if needed */
-  overflow-wrap: break-word;
-  /* Break long words */
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.9rem;
   line-height: 1.6;
   border: 1px solid var(--grid);
   margin: 2rem 0;
   white-space: pre-wrap;
-  /* Enable wrapping */
-  word-break: break-word;
-  /* Ensure long words break */
-  max-width: 100%;
-  /* Ensure it doesn't exceed container */
-  box-sizing: border-box;
-}
-
-/* Better code block experience on mobile */
-@media (max-width: 900px) {
-  pre.shiki {
-    padding: 1rem;
-    line-height: 1.5;
-    /* Full bleed code blocks to prevent awkward overflow */
-    margin-left: -2rem;
-    margin-right: -2rem;
-    max-width: -webkit-fill-available;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    /* Allow internal scroll if needed */
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scrolling on iOS */
-  }
-
-  /* Ensure the layout doesn't cause horizontal scroll */
-  html,
-  body {
-    overflow-x: hidden;
-    max-width: 100%;
-  }
-
-  .content {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* Ensure h1 doesn't overflow */
-  h1 {
-    font-size: 1.5rem;
-    word-break: break-word;
-  }
-
-  /* Fix meta block potential overflow */
-  .meta-block {
-    max-width: 100%;
-  }
-
-  .meta-row {
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
 }
 
 code {
@@ -465,57 +343,4 @@ code {
   background: rgba(128, 128, 128, 0.1);
   padding: 0.1em 0.3em;
   border-radius: 2px;
-}
-
-pre.shiki code {
-  background: none;
-  padding: 0;
-  color: inherit;
-  /* Inherit shiki colors */
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .layout-grid {
-    grid-template-columns: 1fr;
-    border: none;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .sidebar {
-    height: auto;
-    position: relative;
-    border-right: none;
-    border-bottom: 1px solid var(--grid);
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-
-  .identity-top {
-    padding: 1.5rem;
-    max-width: 100%;
-  }
-
-  .sidebar-links {
-    width: 100%;
-  }
-
-  .sidebar-links a {
-    padding: 1rem 1.5rem;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .project-row {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 2rem;
-  }
-
-  .section-body {
-    padding: 2rem;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
 }
