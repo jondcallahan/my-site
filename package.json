@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@fontsource/jetbrains-mono": "^5.2.8",
-    "@fontsource/mona-sans": "^5.2.8",
     "markdown-it": "^14.1.0",
     "markdown-it-shiki": "^0.9.0"
   }
