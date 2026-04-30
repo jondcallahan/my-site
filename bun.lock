@@ -5,7 +5,6 @@
     "": {
       "dependencies": {
         "@fontsource/jetbrains-mono": "^5.2.8",
-        "@fontsource/mona-sans": "^5.2.8",
         "markdown-it": "^14.1.0",
         "markdown-it-shiki": "^0.9.0",
       },
@@ -39,8 +38,6 @@
     "@colors/colors": ["@colors/colors@1.5.0", "", {}, "sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ=="],
 
     "@fontsource/jetbrains-mono": ["@fontsource/jetbrains-mono@5.2.8", "", {}, "sha512-6w8/SG4kqvIMu7xd7wt6x3idn1Qux3p9N62s6G3rfldOUYHpWcc2FKrqf+Vo44jRvqWj2oAtTHrZXEP23oSKwQ=="],
-
-    "@fontsource/mona-sans": ["@fontsource/mona-sans@5.2.8", "", {}, "sha512-xsZE75lQlcPx/WzAuz7EfOHyPbaOMoHU6FAeLUB3J4f8zjPe8g5Ifh8JCWID9vjpQM9Ty1UxqLXgCMVSktlOlw=="],
 
     "@iarna/toml": ["@iarna/toml@2.2.5", "", {}, "sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg=="],
 
